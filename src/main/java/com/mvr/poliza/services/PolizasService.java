@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.mvr.poliza.dtos.PolizaDto;
 import com.mvr.poliza.dtos.response.ApiResponse;
-import com.mvr.poliza.entitys.EmpleadoEnity;
+import com.mvr.poliza.entitys.EmpleadoEntity;
 import com.mvr.poliza.entitys.InventarioEntity;
 import com.mvr.poliza.entitys.PolizaEntity;
 
@@ -14,8 +14,8 @@ public interface PolizasService {
     public int recuperarInventario(int cantidadInventario, int cantidadPoliza);
     public ApiResponse<PolizaDto> savePoliza(PolizaDto polizaDto);
     public ApiResponse<PolizaDto> getIdPoliza(Integer idPoliza);
-    public String deletePoliza(Integer idPoliza);
+    public ApiResponse<String> deletePoliza(Integer idPoliza);
     public ApiResponse<List<PolizaDto>> getAllPolizas();
-    public String updatePoliza(Integer idPoliza, int newCantidad);
-    public PolizaEntity newPolizaSave(EmpleadoEnity empleadoEntity, InventarioEntity inventarioEntity, int cantidadPoliza, Date fecha);
+    public ApiResponse<String> updatePoliza(Integer idPoliza, int newCantidad);
+    public PolizaEntity newPolizaSave(EmpleadoEntity empleadoEntity, InventarioEntity inventarioEntity, int cantidadPoliza, Date fecha);
 }

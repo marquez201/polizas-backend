@@ -1,5 +1,7 @@
 package com.mvr.poliza.entitys;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -13,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class InventarioEntity {
+public class InventarioEntity implements Serializable{
 
     @Id
     @Column(name = "sku")

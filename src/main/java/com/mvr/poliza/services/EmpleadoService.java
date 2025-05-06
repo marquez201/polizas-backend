@@ -1,7 +1,7 @@
 package com.mvr.poliza.services;
 
-import com.mvr.poliza.entitys.EmpleadoEnity;
+import com.mvr.poliza.entitys.EmpleadoEntity;
 
 public interface EmpleadoService {
-    public EmpleadoEnity getEmpleado(Integer idEmpleado);
+    public EmpleadoEntity getEmpleado(Integer idEmpleado);
 }

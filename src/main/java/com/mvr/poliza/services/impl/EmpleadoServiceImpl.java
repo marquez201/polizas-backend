@@ -3,7 +3,7 @@ package com.mvr.poliza.services.impl;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.mvr.poliza.entitys.EmpleadoEnity;
+import com.mvr.poliza.entitys.EmpleadoEntity;
 import com.mvr.poliza.exeptions.ResourceNotFoundException;
 import com.mvr.poliza.repositorys.EmpleadoRepository;
 import com.mvr.poliza.services.EmpleadoService;
@@ -19,7 +19,7 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 
     @Override
     @Transactional(readOnly = true)
-    public EmpleadoEnity getEmpleado(Integer idEmpleado) {
+    public EmpleadoEntity getEmpleado(Integer idEmpleado) {
         var empleado = empleadoRepository.findById(idEmpleado);
         if (empleado.isPresent()) {
             return empleado.get();

@@ -1,8 +1,10 @@
 package com.mvr.poliza.entitys;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import io.micrometer.common.lang.NonNull;
+import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,7 +22,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PolizaEntity {
+public class PolizaEntity implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,16 +31,17 @@ public class PolizaEntity {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "idempleado", referencedColumnName = "idempleado")
-    EmpleadoEnity idEmpleado;
+    EmpleadoEntity idEmpleado;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "sku", referencedColumnName = "sku")
     InventarioEntity sku;
 
     @Column(name = "cantidad")
+    @Nonnull
     int cantidad;
 
     @Column(name = "fecha")
-    @NonNull
+    @Nonnull
     Date fecha;
 }
