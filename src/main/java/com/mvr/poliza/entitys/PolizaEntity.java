@@ -3,7 +3,6 @@ package com.mvr.poliza.entitys;
 import java.io.Serializable;
 import java.util.Date;
 
-import io.micrometer.common.lang.NonNull;
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
