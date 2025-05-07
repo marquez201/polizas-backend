@@ -26,4 +26,9 @@ public class InventarioEntity implements Serializable{
 
     @Column(name = "cantidad")
     int cantidad;
+
+    public InventarioEntity(Integer sku, String nombre) {
+        this.sku = sku;
+        this.nombre = nombre;
+    }
 }

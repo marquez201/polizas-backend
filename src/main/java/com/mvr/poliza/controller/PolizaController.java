@@ -30,13 +30,13 @@ public class PolizaController {
     @GetMapping
     public ResponseEntity<ApiResponse<PolizaDto>> getPoliza(@RequestParam(name = "idPoliza") Integer idPoliza) {
         var poliza = polizasService.getIdPoliza(idPoliza);
-        return ResponseEntity.ok().body(poliza);
+        return ResponseEntity.status(HttpStatus.OK).body(poliza);
     }
 
     @GetMapping("/all")
     public ResponseEntity<ApiResponse<List<PolizaDto>>> getAllPolizas() {
         var polizas = polizasService.getAllPolizas();
-        return ResponseEntity.ok().body(polizas);
+        return ResponseEntity.status(HttpStatus.OK).body(polizas);
     }
 
     @PostMapping
