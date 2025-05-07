@@ -28,7 +28,7 @@ public class PolizaController {
     final PolizasService polizasService;
 
     @GetMapping
-    public ResponseEntity<ApiResponse<PolizaDto>> getPoliza(@RequestParam(name = "idPoliza") Integer idPoliza) {
+    public ResponseEntity<ApiResponse<PolizaDto>> getPoliza(@RequestParam(name = "idPoliza", value = "0") Integer idPoliza) {
         var poliza = polizasService.getIdPoliza(idPoliza);
         return ResponseEntity.status(HttpStatus.OK).body(poliza);
     }
@@ -46,14 +46,14 @@ public class PolizaController {
     }
 
     @DeleteMapping
-    public ResponseEntity<ApiResponse<String>> deletePolizaId(@RequestParam(name = "idPoliza") Integer idPoliza) {
+    public ResponseEntity<ApiResponse<String>> deletePolizaId(@RequestParam(name = "idPoliza", value = "0") Integer idPoliza) {
         var poliza = polizasService.deletePoliza(idPoliza);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body(poliza);
     }
 
     @PutMapping(value = "/update")
-    public ResponseEntity<ApiResponse<String>> updatePoliza(@RequestParam(name = "idPoliza") Integer idPoliza,
-            @RequestParam(name = "newCantidad") int newCantidad) {
+    public ResponseEntity<ApiResponse<String>> updatePoliza(@RequestParam(name = "idPoliza", value = "0") Integer idPoliza,
+            @RequestParam(name = "newCantidad", value = "0") int newCantidad) {
         var updatePoliza = polizasService.updatePoliza(idPoliza, newCantidad);
         return ResponseEntity.status(HttpStatus.OK).body(updatePoliza);
     }
